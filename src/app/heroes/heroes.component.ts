@@ -11,12 +11,12 @@ import { Heroes } from '../mock-heroes';
 export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
+  heroes = Heroes;
+ 
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
-
-  heroes = Heroes;
 
   constructor() { }
 
