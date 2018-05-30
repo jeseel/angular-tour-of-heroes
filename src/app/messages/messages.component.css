@@ -1,0 +1,26 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif
+}
+
+h2{
+    color:rgb(224, 16, 16)
+}
+
+button{
+    padding: 5px 15px;
+    background-color: #e4e1e1;
+    color: #333;
+    font-weight: bold;
+    border:none;
+    cursor: pointer;
+ 
+}
+button:hover{
+    background-color: #bdb8b8;
+}
+
+button.clear{
+    color:#333;
+}
