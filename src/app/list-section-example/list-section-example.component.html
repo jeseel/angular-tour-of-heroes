@@ -1,0 +1,54 @@
+<!-- <div>
+  <mat-toolbar color="primary">
+    <span><mat-icon>mood</mat-icon></span>
+
+    <span>Yay, Material in Angular 2!</span>
+
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item>Option 1</button>
+    <button mat-menu-item>Option 2</button>
+  </mat-menu>
+
+  <mat-card>
+    <button mat-button>All</button>
+    <button mat-raised-button>Of</button>
+    <button mat-raised-button color="primary">The</button>
+    <button mat-raised-button color="accent">Buttons</button>
+  </mat-card>
+
+  <span class="done">
+    <button mat-fab>
+      <mat-icon>check circle</mat-icon>
+    </button>
+  </span>
+</div> -->
+
+<!-- <mat-list role="list">
+  <mat-list-item role="listitem">Item 1</mat-list-item>
+  <mat-list-item role="listitem">Item 2</mat-list-item>
+  <mat-list-item role="listitem">Item 3</mat-list-item>
+</mat-list> -->
+
+ <mat-list>
+  <h3 mat-subheader>Folders</h3>
+  
+  <mat-list-item *ngFor="let folder of folders">
+    <mat-icon mat-list-icon>folder</mat-icon>
+    <h4 mat-line>{{folder.name}}</h4>
+    <p mat-line>{{folder.updated | date}}</p>
+  </mat-list-item>
+  
+  <mat-divider></mat-divider>
+  
+  <h3 mat-subheader>Notes</h3>
+  <mat-list-item *ngFor="let note of notes">
+    <mat-icon mat-list-icon>note</mat-icon>
+    <h4 mat-line>{{note.name}}</h4>
+    <p mat-line>{{note.updated | date}}</p>
+  </mat-list-item>
+</mat-list>  
+

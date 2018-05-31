@@ -8,16 +8,23 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 
+import  {MyMaterialDesignModule} from './my-material-design/my-material-design.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListSectionExampleComponent } from './list-section-example/list-section-example.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    ListSectionExampleComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MyMaterialDesignModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
