@@ -11,6 +11,8 @@ import { MessagesComponent } from './messages/messages.component';
 import  {MyMaterialDesignModule} from './my-material-design/my-material-design.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListSectionExampleComponent } from './list-section-example/list-section-example.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { ListSectionExampleComponent } from './list-section-example/list-section
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    ListSectionExampleComponent
+    ListSectionExampleComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     MyMaterialDesignModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
