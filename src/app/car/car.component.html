@@ -1,0 +1,11 @@
+<h1>Cars list</h1>
+
+<ul>
+  <li *ngFor="let car of cars" >
+    <a routerLink="/carDetail/{{car.id}}">
+      <span class="badge">{{car.id}}</span> {{car.name}}
+    </a>
+  </li>
+</ul>
+
+<button (click)="goBack()">Go back</button>
