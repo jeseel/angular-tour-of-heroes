@@ -32,18 +32,6 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes'; // UTl to web API
 
-  getHeroes(): Observable<Hero[]> {
-    // // Todo: Send the message _after_ fetching the heroes
-    // this.messageService.add('HeroService: fetched heroes');
-    // return of(HEROES);
-
-    return this.http.get<Hero[]>(this.heroesUrl)
-      .pipe(
-        tap(heroes => this.log(`fetched heroes`)),
-        catchError(this.handleError('getHeroes', []))
-      );
-  }
-
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -65,6 +53,19 @@ export class HeroService {
     }
   }
 
+  getHeroes(): Observable<Hero[]> {
+    // // Todo: Send the message _after_ fetching the heroes
+    // this.messageService.add('HeroService: fetched heroes');
+    // return of(HEROES);
+
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        tap(heroes => this.log(`fetched heroes`)),
+        catchError(this.handleError('getHeroes', []))
+      );
+  }
+
+  
   addHero(hero: Hero): Observable<Hero> {
 
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
@@ -84,14 +85,13 @@ export class HeroService {
       )
   }
 
-
   updateHero(hero: Hero): Observable<any> {
-
     return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     )
   }
+
 
   deleteHero(hero: Hero | number): Observable<Hero> {
     const id = typeof hero === 'number' ? hero : hero.id;
@@ -103,5 +103,16 @@ export class HeroService {
     );
   }
 
+  searchHeroes(term: string): Observable<Hero[]> {
+
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found heroes matching "${term}"`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+  }
 
 }
